@@ -32,7 +32,7 @@
             <div class="form-group">
                 <label for="type">Fertilizer Type</label>
                 <select class="form-select" aria-label="Default select example" name="type">
-                    <option selected>Select Fertilizer type</option>
+                    <option selected>Select Fertilizer types</option>
                     <option value="dry fertilizer"  @isset($catalogue)@if ($catalogue->type === 'dry fertilizer') selected @endif @endisset>dry fertilizer</option>
                     <option value="liquid fertilizer" @isset($catalogue)@if ($catalogue->type === 'liquid fertilizer') selected @endif @endisset>liquid fertilizer</option>
                     <option value="mix fertilizer"  @isset($catalogue)@if ($catalogue->type === 'mix fertilizer') selected @endif @endisset>mix fertilizer</option>
