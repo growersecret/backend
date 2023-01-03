@@ -3,6 +3,8 @@
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\FreehitController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisteruserController;
+use App\Models\Registeruser;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +29,8 @@ Route::get('/dashboard', function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
      Route::resource('catalogue', CatalogueController::class);
      Route::resource('freehit', FreehitController::class);
+    Route::get('/register-user', [RegisteruserController::class, 'registerList'])->name('registerList');
+
 });
 
 Route::middleware('auth')->group(function () {
