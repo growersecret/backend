@@ -4,7 +4,7 @@
         <aside class="left-sidebar bg-sidebar" >
             <div id="sidebar" class="sidebar sidebar-with-footer">
               <!-- Aplication Brand -->
-              <div class="app-brand" >
+              <div class="app-brand">
                 <a href="/index.html">
 
                   <span class="brand-name">Grower's Secret</span>
@@ -29,6 +29,32 @@
                         <div class="sub-menu">
 
 {{-- //start --}}
+
+                      <li  class="has-sub" >
+                         <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pagedet"
+                            aria-expanded="false" aria-controls="pagedet">
+                                 <span class="nav-text">Registered User</span> <b class="caret"></b>
+                             </a>
+                       <ul  class="collapse"  id="pagedet">
+                           <div class="sub-menu">
+                            <li>
+                            <a href="{{route('registerlist')}}">Register user</a>
+                             </li>
+                        
+                            
+                            <li>
+                              <a href="{{route('updatedregisterlist')}}">Updated Register user</a>
+                             </li>
+                        
+{{-- //end --}}
+
+
+                           </div>
+                           </ul>
+                           </li>
+
+
+
                           <li  class="has-sub" >
                             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pagedetail"
                               aria-expanded="false" aria-controls="pagedetail">

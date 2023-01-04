@@ -71,8 +71,7 @@ class FreehitController extends Controller
      */
     public function update(Request $request, Freehit $freehit)
     {
-
-       
+      
         $request->validate([
             'freecount' => 'required|numeric'
         ]);

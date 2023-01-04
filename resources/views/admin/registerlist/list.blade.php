@@ -7,10 +7,10 @@
       <div class="card mb-4">
         <div class="card-header py-3">
          <div class="d-flex justify-content-between align-items-center" >
-            <h5 class="text-primary">User List</h5>
+            <h5 class="text-primary">Register List</h5>
           
            <div>
-            <a href="" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i>Add User </a> 
+           
         </div>
        
         </div>
@@ -20,26 +20,28 @@
             <thead class="thead-light">
               <tr>
                 <th>Sr.No.</th>
-                <th>Name</th>
+            
                 <th>Email</th>
-                <th>Contact</th>
-                <th>Address</th>
-                <th>Action</th>
+                <th>Free count Left</th>
+                <th>Created At</th>
+              
               </tr>
             </thead>
             <tbody id="myTable">
-              
+              @foreach ($registers as $key=>$item)
+                
+         
                     <tr>
-                       <td>1</td>
+                       <td>{{$key +1}}</td>
 
-                       <td> Neeraj</td>
+                       <td>{{$item->email}}</td>
 
-                       <td>neeraj@gmail.com</td>
+                       <td>{{$item->hit_remaining}}</td>
 
-                       <td>9695454109</td>
+                       <td>{{$item->created_at}}</td>
                         
-                       <td>Lucknow</td>
-
+                       
+{{-- 
                        
                        <td>
                          <a href="" class="btn btn-primary btn-icon-split btn-sm">
@@ -60,9 +62,7 @@
                             <h5 class="modal-title" id="delted-modal-Label"> Are you Sure Want to Delete This Inventory</h5>
 
                           </div>
-                          {{-- <div class="modal-body">
-                              Are you Sure Want to Delete <br>
-                          </div> --}}
+                          
                           <div class="modal-footer">
                             <button type="button"  data-dismiss="modal"> <span class="btn btn-dark btn-sm"> Close</span></button>
                             <form action="" method="post">
@@ -75,10 +75,11 @@
                         </div>
                       </div>
                     </div>
-                       </td>
+                       </td> --}}
 
 
                     </tr>
+                  @endforeach
                    
             </tbody>
           </table>
