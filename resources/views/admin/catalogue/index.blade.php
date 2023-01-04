@@ -68,7 +68,7 @@
                    <div class="modal-dialog" role="document">
                      <div class="modal-content">
                        <div class="modal-header">
-                         <h5 class="modal-title" id="delted-modal-Label-{{$key + 1}}"> Are you Sure Want to Delete This Inventory</h5>
+                         <h5 class="modal-title" id="delted-modal-Label-{{$key + 1}}"> Are you Sure Want to Delete</h5>
 
                        </div>
                        {{-- <div class="modal-body">

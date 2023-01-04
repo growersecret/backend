@@ -91,13 +91,10 @@
 
  @section('custom_JS')
 
-<script src="https://cdn.ckeditor.com/4.14.1/standard-all/ckeditor.js"></script>
+
 
 <script>
 
-    CKEDITOR.replace('paragraph7', {
-      height: 200,
-    });
 </script>
 
 @endsection

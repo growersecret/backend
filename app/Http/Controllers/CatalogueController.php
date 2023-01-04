@@ -111,7 +111,6 @@ class CatalogueController extends Controller
 
         return redirect()->route('catalogue.index')->with('success', 'Fertilizer updated Successfully');
 
-
     }
 
     /**

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::get('/dashboard', function () {
@@ -29,7 +29,9 @@ Route::get('/dashboard', function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
      Route::resource('catalogue', CatalogueController::class);
      Route::resource('freehit', FreehitController::class);
-    Route::get('/register-user', [RegisteruserController::class, 'registerList'])->name('registerList');
+    Route::get('/registerlist', [RegisteruserController::class, 'registerList'])->name('registerlist');
+    Route::get('/updatedregisterlist', [RegisteruserController::class, 'updatedregisterList'])->name('updatedregisterlist');
+
 
 });
 
