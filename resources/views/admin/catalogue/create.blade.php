@@ -4,7 +4,7 @@
 
 <div class="card col-lg-12 mb-4">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">Fertilizers</h6>
+      <h6 class="m-0 " style="color:#a70064">Fertilizers</h6>
       <a href="{{route('catalogue.index')}}" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i>Back </a> 
     </div>
 
@@ -32,7 +32,7 @@
             <div class="form-group">
                 <label for="type">Fertilizer Type</label>
                 <select class="form-select" aria-label="Default select example" name="type">
-                    <option selected>Select Fertilizer type</option>
+                    <option value="">Select Fertilizer type</option>
                     <option value="dry fertilizer"  @isset($catalogue)@if ($catalogue->type === 'dry fertilizer') selected @endif @endisset>dry fertilizer</option>
                     <option value="liquid fertilizer" @isset($catalogue)@if ($catalogue->type === 'liquid fertilizer') selected @endif @endisset>liquid fertilizer</option>
                     <option value="mix fertilizer"  @isset($catalogue)@if ($catalogue->type === 'mix fertilizer') selected @endif @endisset>mix fertilizer</option>
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-
+<h6 class="m-0" style="color:#a70064">Major Nutrients</h6>
 <div class="row">
     <div class="col-md-4">
         <div class="form-group">
@@ -71,6 +71,41 @@
             <label for="percent_K">Percentage of N</label>
             <input type="text" class="form-control"  name="percent_K"  value="{{isset($catalogue) ? $catalogue->percent_K: old('percent_K') }}"">
             @error('percent_K')
+            <small style="color: rgba(255, 0, 0, 0.626)">{{ $message }}</small>
+            @enderror
+        </div>
+    </div>
+
+</div>
+
+
+<h6 class="m-0  " style="color:#a70064">Extra Nutrients</h6>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="boron">Boron</label>
+            <input type="text" class="form-control"  name="boron"  value="{{isset($catalogue) ? $catalogue->boron: old('boron') }}"">
+            @error('boron')
+            <small style="color: rgba(255, 0, 0, 0.626)">{{ $message }}</small>
+            @enderror
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="calcium">Calcium</label>
+            <input type="text" class="form-control"  name="calcium"  value="{{isset($catalogue) ? $catalogue->calcium: old('calcium') }}"">
+            @error('calcium')
+            <small style="color: rgba(255, 0, 0, 0.626)">{{ $message }}</small>
+            @enderror
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="phosphorus">Phosphorus</label>
+            <input type="text" class="form-control"  name="phosphorus"  value="{{isset($catalogue) ? $catalogue->phosphorus: old('phosphorus') }}"">
+            @error('phosphorus')
             <small style="color: rgba(255, 0, 0, 0.626)">{{ $message }}</small>
             @enderror
         </div>

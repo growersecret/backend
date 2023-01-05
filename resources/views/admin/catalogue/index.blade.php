@@ -7,7 +7,7 @@
       <div class="card mb-4">
         <div class="card-header py-3">
          <div class="d-flex justify-content-between align-items-center" >
-            <h5 class="text-primary">Grower's Secret</h5>
+            <h5 class="" style="color:#a70064">Fertilizer List</h5>
           
            <div>
             <a href="{{route('catalogue.create')}}" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i>Add Fertilizer </a> 

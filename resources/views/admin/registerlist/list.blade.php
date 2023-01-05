@@ -7,7 +7,7 @@
       <div class="card mb-4">
         <div class="card-header py-3">
          <div class="d-flex justify-content-between align-items-center" >
-            <h5 class="text-primary">Register List</h5>
+            <h5 class="" style="color:#a70064">Register List</h5>
           
            <div>
            
@@ -22,7 +22,7 @@
                 <th>Sr.No.</th>
             
                 <th>Email</th>
-                <th>Free count Left</th>
+                <th>Free Hit left/ Total Free Hit</th>
                 <th>Created At</th>
               
               </tr>
@@ -36,7 +36,7 @@
 
                        <td>{{$item->email}}</td>
 
-                       <td>{{$item->hit_remaining}}</td>
+                       <td>{{$item->hit_remaining}}/{{$item->free_hit}}</td>
 
                        <td>{{$item->created_at}}</td>
                         

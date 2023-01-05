@@ -16,6 +16,7 @@ class Catalogue extends Model
         'type',
         'percent_P',
         'percent_N',
-        'percent_K'   
+        'percent_K',
+       
      ];
 }

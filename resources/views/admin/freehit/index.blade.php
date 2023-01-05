@@ -7,7 +7,7 @@
         <div class="card mb-4">
             <div class="card-header py-3">
                 <div class="d-flex justify-content-between align-items-center" >
-                    <h5 class="text-primary">Free Hit Management</h5> 
+                    <h5 class="" style="color:#a70064">Free Hit Management</h5> 
                 </div>
             </div>
 

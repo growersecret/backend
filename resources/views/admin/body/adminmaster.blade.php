@@ -1,13 +1,4 @@
-{{-- <x-app-layout>
-  
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-              
-            </div>
-        </div>
-    </div>
-</x-app-layout> --}}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -44,7 +35,14 @@
 
   <!-- FAVICON -->
   <link href="assets/img/favicon.png" rel="shortcut icon" />
-
+  <style>
+    .app-brand {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    background-color: #a70064;
+}
+  </style>
  
   <script src="{{asset('backend/assets/plugins/nprogress/nprogress.js')}}"></script>
 </head>
@@ -92,7 +90,7 @@
            <div class="content">						 
 
       @if (session()->has('success'))
-      <div class="col-md-5"> <div class="msg-success"> {{session()->get('success')}}</div></div>
+      <div style="background-color:rgba(25, 151, 25, 0.692);padding:8px 10px;color:#fff; width:fit-content; margin-bottom:10px"> {{session()->get('success')}}</div>
       @endif     
 
        @yield('admin')
