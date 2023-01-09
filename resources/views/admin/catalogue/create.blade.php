@@ -4,7 +4,7 @@
 
 <div class="card col-lg-12 mb-4">
     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-      <h6 class="m-0 font-weight-bold text-primary">Fertilizers</h6>
+      <h6 class="m-0 " style="color:#a70064">Fertilizers</h6>
       <a href="{{route('catalogue.index')}}" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i>Back </a> 
     </div>
 
@@ -32,7 +32,7 @@
             <div class="form-group">
                 <label for="type">Fertilizer Type</label>
                 <select class="form-select" aria-label="Default select example" name="type">
-                    <option selected>Select Fertilizer type</option>
+                    <option value="">Select Fertilizer type</option>
                     <option value="dry fertilizer"  @isset($catalogue)@if ($catalogue->type === 'dry fertilizer') selected @endif @endisset>dry fertilizer</option>
                     <option value="liquid fertilizer" @isset($catalogue)@if ($catalogue->type === 'liquid fertilizer') selected @endif @endisset>liquid fertilizer</option>
                     <option value="mix fertilizer"  @isset($catalogue)@if ($catalogue->type === 'mix fertilizer') selected @endif @endisset>mix fertilizer</option>
@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-
+<h6 class="m-0" style="color:#a70064">Major Nutrients</h6>
 <div class="row">
     <div class="col-md-4">
         <div class="form-group">
@@ -77,6 +77,7 @@
     </div>
 
 </div>
+
 
     <button class="btn btn-primary btn-icon-split btn-sm">
         Submit

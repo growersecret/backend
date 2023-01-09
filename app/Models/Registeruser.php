@@ -17,6 +17,7 @@ class Registeruser extends Model
         'number',
         'profile_setup',
        'hit_remaining',
+       'free_hit',
        'email',
         'otp',
     ];

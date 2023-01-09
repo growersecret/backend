@@ -1,1 +1,1 @@
-{{$data['otp']}}
+Grower's Secret OTP : {{$data['otp']}}

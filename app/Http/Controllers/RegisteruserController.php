@@ -23,8 +23,6 @@ class RegisteruserController extends Controller
     }
 
     public function registerStore(Request $request){
-
-
         $request->validate([
             'email' => 'required|email|max:155'
         ]);
@@ -32,15 +30,13 @@ class RegisteruserController extends Controller
        $freehit = Freehit::first();
         $user = Registeruser::where('email', $request->email)->first();
 
-        if($user){
-
+       if($user){
             $user->otp = $otp;
             $user->save();
             $data = [
                 'email' => $request->email,
                  'otp' => $otp
             ];  
-
             Mail::to($request->email)->send(new OTPmail($data));
             return response(["status" => 200, "message" => "Success", 'data' =>$data]);
         }
@@ -50,6 +46,7 @@ class RegisteruserController extends Controller
         $data = [
             'email' => $request->email,
             'hit_remaining' => $freehit->freecount,
+            'free_hit' => $freehit->freecount,
             'otp' => $otp
         ];
 
@@ -64,6 +61,10 @@ class RegisteruserController extends Controller
 
 
     public function registerVerify(Request $request){
+        $request->validate([
+            'email' => 'required|email|max:155',
+            'otp' => 'required|numeric',
+        ]);
         $registeruser = Registeruser::where([['email','=',$request->email],['otp','=',$request->otp]])->first();
 
         if ($registeruser) {
@@ -72,7 +73,6 @@ class RegisteruserController extends Controller
             ];
             return response(["status" => 200, "message" => "Success", 'data'=>$data]);
         }
-
         return response(["status" => 403, "message" => "Invalid OTP",]);
     }
 
@@ -104,6 +104,25 @@ class RegisteruserController extends Controller
         $user = Registeruser::where('email', $email)->first();
         $user->hit_remaining = $user->hit_remaining -1 ;
         $user->save();
+
+        return response(["status" => 200, "message" => "Success", 'data' => $user]);
+    }
+
+
+    public function updateRegisterUser(Request $request ,$email){
+     
+        $user = Registeruser::where('email', $email)->first();
+        $request->validate([
+            'name' => 'required|max:45',
+            'address' => 'required|max:255',
+            'number' => 'required|max:36',
+        ]);
+        $data = [
+            'name' => $request->name,
+            'address' => $request->address,
+            'number' => $request->number,
+        ];
+        $user->update($data);
 
         return response(["status" => 200, "message" => "Success", 'data' => $user]);
     }

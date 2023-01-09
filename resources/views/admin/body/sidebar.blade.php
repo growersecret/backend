@@ -5,10 +5,9 @@
             <div id="sidebar" class="sidebar sidebar-with-footer">
               <!-- Aplication Brand -->
               <div class="app-brand">
-                <a href="/index.html">
-
-                  <span class="brand-name">Grower's Secret</span>
-                </a>
+            
+                  <img src="{{asset('img/logo2.png')}}" alt="" srcset="" style="height: 75px; object-fit:contain">
+               
               </div>
               <!-- begin sidebar scrollbar -->
               <div class="sidebar-scrollbar">
@@ -21,8 +20,8 @@
                     <li  class="has-sub active expand" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
                         aria-expanded="false" aria-controls="dashboard">
-                        <i class="mdi mdi-view-dashboard-outline"></i>
-                        <span class="nav-text">Landing Page</span> <b class="caret"></b>
+                        <i class="mdi mdi-view-dashboard-outline" style="color:#a70064"></i>
+                        <span class="nav-text">Admin Dashboard</span> <b class="caret"></b>
                       </a>
                       <ul  class="collapse show"  id="dashboard"
                         data-parent="#sidebar-menu">
@@ -95,11 +94,62 @@
                             </ul>
                           </li>
 
+                       
+   
+                             <li  class="has-sub" >
+                               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#detail"
+                                 aria-expanded="false" aria-controls="detail">
+                                 <span class="nav-text">More Nutrients</span> <b class="caret"></b>
+                               </a>
+                               <ul  class="collapse"  id="detail">
+                                 <div class="sub-menu">
+   
+                                   <li >
+                                     <a href="{{route('morenutrient.index')}}">Index</a>
+                                   </li>
+                                   <li >
+                                     <a href="{{route('morenutrient.create')}}">Create</a>
+                                   </li>
+   {{-- //end --}}
+   
+   
+                                 </div>
+                               </ul>
+                             </li>
+
 
                         </div>
                       </ul>
                     </li>
 
+{{-- 
+                    <li  class="has-sub" >
+                      <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pagedet"
+                         aria-expanded="false" aria-controls="pagedet">
+                              <span class="nav-text">Registered User</span> <b class="caret"></b>
+                          </a>
+                    <ul  class="collapse"  id="pagedet">
+                        <div class="sub-menu">
+                         <li>
+                         <a href="{{route('registerlist')}}">Register user</a>
+                          </li>
+                     
+                         
+                         <li>
+                           <a href="{{route('updatedregisterlist')}}">Updated Register user</a>
+                          </li>
+                     
+
+
+
+                        </div>
+                        </ul>
+                        </li> --}}
+
+
+
+                    
+{{-- 
                     <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pages"
                         aria-expanded="false" aria-controls="pages">
@@ -133,7 +183,7 @@
 
                               </div>
                             </ul>
-                          </li>
+                          </li> --}}
 
                 </ul>
 

@@ -2,12 +2,30 @@
 
 @section('admin')
 
+
+<div class="card-deck mb-4">
+  <div class="card col-3">
+
+    <div class="card-body">
+      <h4 class="card-title" style="color:#a70064" >Total Updated Users</h5>
+        <p class="h6">
+          {{$registers->count()}}
+        </p>
+      
+    </div>
+  </div>
+ 
+  </div>
+ 
+ 
+
+
 <div class="row">
     <div class="col-lg-12">
       <div class="card mb-4">
         <div class="card-header py-3">
          <div class="d-flex justify-content-between align-items-center" >
-            <h5 class="text-primary">Register List</h5>
+            <h5 class="" style="color:#a70064">Total Updated List</h5>
           
            <div>
 

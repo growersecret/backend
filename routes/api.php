@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\RegisteruserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,5 @@ Route::post('/register-user/verify', [RegisteruserController::class, 'registerVe
 Route::post('/resendotp', [RegisteruserController::class, 'resendOtp']);
 Route::get('/userdetail/{email}', [RegisteruserController::class, 'userdetail']);
 Route::get('/reducehit/{email}', [RegisteruserController::class, 'reducehit']);
+Route::get('/catalogues', [CatalogueController::class, 'allCatalogueApi']);
+Route::patch('/updateRegisterUser/{email}', [RegisteruserController::class, 'updateRegisterUser']);

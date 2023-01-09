@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Catalogue;
 use Illuminate\Http\Request;
+use Illuminate\Testing\Fluent\Concerns\Has;
 
 class CatalogueController extends Controller
 {
@@ -40,19 +41,21 @@ class CatalogueController extends Controller
       
         $request->validate([
             'name' => 'required|max:45',
-             'type'=> 'required|max:36',
+             'type'=> 'required',
              'percent_N'=>'required|numeric|digits_between:0,100',
              'percent_P'=>'required|numeric|digits_between:0,100',
-             'percent_K'=>'required|numeric|digits_between:0,100'
+             'percent_K'=>'required|numeric|digits_between:0,100',
+          
         ]);
-
+       
         $data = [
           'name'=>$request->name,
           'type'=>$request->type,
           'percent_N'=>$request->percent_N,
           'percent_P'=>$request->percent_P,
           'percent_K'=>$request->percent_K,
-          'code'=>'gs00001',
+        
+        
         ];
         Catalogue::create($data);
         return redirect()->route('catalogue.index')->with('success', 'Fertilizer created Successfully');
@@ -91,12 +94,13 @@ class CatalogueController extends Controller
     {
         $request->validate([
             'name' => 'required|max:45',
-             'type'=> 'required|max:36',
+             'type'=> 'required',
              'percent_N'=>'required|numeric|digits_between:0,100',
              'percent_P'=>'required|numeric|digits_between:0,100',
-             'percent_K'=>'required|numeric|digits_between:0,100'
+             'percent_K'=>'required|numeric|digits_between:0,100',
+          
         ]);
-
+       
 
         $data = [
             'name'=>$request->name,
@@ -104,7 +108,8 @@ class CatalogueController extends Controller
             'percent_N'=>$request->percent_N,
             'percent_P'=>$request->percent_P,
             'percent_K'=>$request->percent_K,
-            'code'=>$catalogue->code,
+        
+          
           ];
 
         $catalogue->update($data);
@@ -124,5 +129,12 @@ class CatalogueController extends Controller
         $catalogue->delete();
         return redirect()->route('catalogue.index')->with('success', 'Fertilizer deleted Successfully');
 
+    }
+
+
+    public function allCatalogueApi(){
+        $catalogue = Catalogue::orderBy('name', 'asc')->get();
+
+        return response(["status" => 200, "message" => "Success", 'catalogues' =>$catalogue]);
     }
 }

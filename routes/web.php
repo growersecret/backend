@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\FreehitController;
+use App\Http\Controllers\MorenutrientController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisteruserController;
 use App\Models\Registeruser;
@@ -22,6 +23,7 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
+
 Route::get('/dashboard', function () {
     return view('admin.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -29,16 +31,12 @@ Route::get('/dashboard', function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
      Route::resource('catalogue', CatalogueController::class);
      Route::resource('freehit', FreehitController::class);
+     Route::resource('morenutrient', MorenutrientController::class);
     Route::get('/registerlist', [RegisteruserController::class, 'registerList'])->name('registerlist');
     Route::get('/updatedregisterlist', [RegisteruserController::class, 'updatedregisterList'])->name('updatedregisterlist');
 
-
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+
 
 require __DIR__.'/auth.php';
