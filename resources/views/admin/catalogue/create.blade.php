@@ -79,40 +79,6 @@
 </div>
 
 
-<h6 class="m-0  " style="color:#a70064">Extra Nutrients</h6>
-<div class="row">
-    <div class="col-md-4">
-        <div class="form-group">
-            <label for="boron">Boron</label>
-            <input type="text" class="form-control"  name="boron"  value="{{isset($catalogue) ? $catalogue->boron: old('boron') }}"">
-            @error('boron')
-            <small style="color: rgba(255, 0, 0, 0.626)">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="form-group">
-            <label for="calcium">Calcium</label>
-            <input type="text" class="form-control"  name="calcium"  value="{{isset($catalogue) ? $catalogue->calcium: old('calcium') }}"">
-            @error('calcium')
-            <small style="color: rgba(255, 0, 0, 0.626)">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="form-group">
-            <label for="phosphorus">Phosphorus</label>
-            <input type="text" class="form-control"  name="phosphorus"  value="{{isset($catalogue) ? $catalogue->phosphorus: old('phosphorus') }}"">
-            @error('phosphorus')
-            <small style="color: rgba(255, 0, 0, 0.626)">{{ $message }}</small>
-            @enderror
-        </div>
-    </div>
-
-</div>
-
     <button class="btn btn-primary btn-icon-split btn-sm">
         Submit
       </button>

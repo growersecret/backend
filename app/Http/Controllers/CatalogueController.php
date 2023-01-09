@@ -47,33 +47,14 @@ class CatalogueController extends Controller
              'percent_K'=>'required|numeric|digits_between:0,100',
           
         ]);
-        if($request->boron){
-            $request->validate([
-                'boron'=>'required|numeric|digits_between:0,100',
-            ]);
-            $data['boron']=$request->boron;
-        }
-        if($request->calcium){
-            $request->validate([
-                'calcium'=>'required|numeric|digits_between:0,100',
-            ]);
-            $data['calcium']=$request->calcium;
-        }
-        if($request->phodphorus){
-            $request->validate([
-                'phodphorus'=>'required|numeric|digits_between:0,100',
-            ]);
-            $data['phodphorus']=$request->phodphorus;
-        }
+       
         $data = [
           'name'=>$request->name,
           'type'=>$request->type,
           'percent_N'=>$request->percent_N,
           'percent_P'=>$request->percent_P,
           'percent_K'=>$request->percent_K,
-          'boron'=>$request->boron,
-          'calcium'=>$request->calcium,
-          'phosphorus'=>$request->phosphorus,
+        
         
         ];
         Catalogue::create($data);
@@ -127,9 +108,7 @@ class CatalogueController extends Controller
             'percent_N'=>$request->percent_N,
             'percent_P'=>$request->percent_P,
             'percent_K'=>$request->percent_K,
-            'boron'=>$request->boron,
-            'calcium'=>$request->calcium,
-            'phosphorus'=>$request->phosphorus,
+        
           
           ];
 

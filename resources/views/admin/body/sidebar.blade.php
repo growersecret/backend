@@ -94,10 +94,61 @@
                             </ul>
                           </li>
 
+                       
+   
+                             <li  class="has-sub" >
+                               <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#detail"
+                                 aria-expanded="false" aria-controls="detail">
+                                 <span class="nav-text">More Nutrients</span> <b class="caret"></b>
+                               </a>
+                               <ul  class="collapse"  id="detail">
+                                 <div class="sub-menu">
+   
+                                   <li >
+                                     <a href="{{route('morenutrient.index')}}">Index</a>
+                                   </li>
+                                   <li >
+                                     <a href="{{route('morenutrient.create')}}">Create</a>
+                                   </li>
+   {{-- //end --}}
+   
+   
+                                 </div>
+                               </ul>
+                             </li>
+
 
                         </div>
                       </ul>
                     </li>
+
+{{-- 
+                    <li  class="has-sub" >
+                      <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pagedet"
+                         aria-expanded="false" aria-controls="pagedet">
+                              <span class="nav-text">Registered User</span> <b class="caret"></b>
+                          </a>
+                    <ul  class="collapse"  id="pagedet">
+                        <div class="sub-menu">
+                         <li>
+                         <a href="{{route('registerlist')}}">Register user</a>
+                          </li>
+                     
+                         
+                         <li>
+                           <a href="{{route('updatedregisterlist')}}">Updated Register user</a>
+                          </li>
+                     
+
+
+
+                        </div>
+                        </ul>
+                        </li> --}}
+
+
+
+                    
 {{-- 
                     <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pages"

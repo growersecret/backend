@@ -1,32 +1,28 @@
 @extends('admin.body.adminmaster')
 
 @section('admin')
-
 <div class="card-deck mb-4">
   <div class="card col-3">
 
     <div class="card-body">
       <h4 class="card-title" style="color:#a70064" >Total Fertilizers</h5>
         <p class="h6">
-          {{$catalogues->count()}}
+          {{$morenutrients->count()}}
         </p>
       
     </div>
   </div>
  
   </div>
- 
- 
-
 <div class="row">
     <div class="col-lg-12">
       <div class="card mb-4">
         <div class="card-header py-3">
-         <div class="d-flex justify-content-between align-items-center" id="example">
-            <h5 class="" style="color:#a70064">Fertilizer List</h5>
+         <div class="d-flex justify-content-between align-items-center" >
+            <h5 class="" style="color:#a70064">More Nutrient List</h5>
           
            <div>
-            <a href="{{route('catalogue.create')}}" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i>Add Fertilizer </a> 
+            <a href="{{route('morenutrient.create')}}" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i>Add More Nutrients </a> 
         </div>
        
         </div>
@@ -36,17 +32,15 @@
             <thead class="thead-light">
               <tr>
                 <th>Sr.No.</th>
-                <th> Name</th>
-                <th>Type</th>
-                 <th>Percentage of N</th>
-                 <th>Percentage of P</th>
-                 <th>Percentage of K</th>
+                <th>Nutrient Name</th>
+                <th>Percentage</th>
+             
                 <th>Action</th>
             
               </tr>
             </thead>
             <tbody id="myTable">
-                @forelse ($catalogues as $key=>$item)
+                @foreach ($morenutrients as $key=>$item)
                 <tr>
                     <td>{{$key + 1}}</td>
                     <td>
@@ -54,22 +48,14 @@
                     </td>
 
                     <td>
-                    {{$item->type}}
+                        {{$item->percentage}}%
                     </td>
 
-                    <td>
-                    {{$item->percent_N}}%
-                    </td>
-                     <td>
-                    {{$item->percent_P}}%
-                    </td>
-                    <td>
-                    {{$item->percent_K}}%
-                    </td>
+                 
 
                     
                     <td>
-                      <a href="{{route('catalogue.edit', $item->id)}}" class="btn btn-primary btn-icon-split btn-sm">
+                      <a href="{{route('morenutrient.edit', $item->id)}}" class="btn btn-primary btn-icon-split btn-sm">
                          <span class="icon text-white-50">
                             <i class="fas fa-pen"></i>
                          </span>
@@ -92,7 +78,7 @@
                        </div> --}}
                        <div class="modal-footer">
                          <button type="button"  data-dismiss="modal"> <span class="btn btn-dark btn-sm"> Close</span></button>
-                         <form action="{{route('catalogue.destroy', $item->id)}}" method="post">
+                         <form action="{{route('morenutrient.destroy', $item->id)}}" method="post">
                            @csrf
                            @method('DELETE')
                            <button type="submit">
@@ -107,9 +93,9 @@
 
                  </tr>
                     
-                @empty
+               
                     
-                @endforelse
+                @endforeach
               
                     
                    
@@ -121,8 +107,5 @@
       </div>
     </div>
   </div>
-
-@endsection
-@section('custom_JS')
 
 @endsection
