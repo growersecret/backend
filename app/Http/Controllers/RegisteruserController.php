@@ -121,6 +121,7 @@ class RegisteruserController extends Controller
             'name' => $request->name,
             'address' => $request->address,
             'number' => $request->number,
+            'profile_setup'=> 1
         ];
         $user->update($data);
 

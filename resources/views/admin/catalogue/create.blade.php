@@ -68,7 +68,7 @@
 
     <div class="col-md-4">
         <div class="form-group">
-            <label for="percent_K">Percentage of N</label>
+            <label for="percent_K">Percentage of K</label>
             <input type="text" class="form-control"  name="percent_K"  value="{{isset($catalogue) ? $catalogue->percent_K: old('percent_K') }}"">
             @error('percent_K')
             <small style="color: rgba(255, 0, 0, 0.626)">{{ $message }}</small>

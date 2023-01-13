@@ -11,6 +11,6 @@ class Morenutrient extends Model
 
     protected $fillable = [
         'name',
-        'percentage',
+      
     ];
 }

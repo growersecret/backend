@@ -7,6 +7,9 @@
 
     <div class="card-body">
       <h4 class="card-title" style="color:#a70064" >Total Registered Users</h5>
+        <p class="text-black mb-1">
+          Users who have not Updated Profile 
+            </p>
         <p class="h6">
           {{$registers->count()}}
         </p>

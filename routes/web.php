@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CatalogueController;
 use App\Http\Controllers\FreehitController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MorenutrientController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisteruserController;
@@ -24,11 +25,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('admin.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[FrontController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::prefix('admin')->middleware('auth')->group(function () {
+     Route::resource('catalogue', CatalogueController::class);
+     Route::get('catalogue/active/{id}', [CatalogueController::class, 'activeCatalogue'])->name('activeCatalogue');
+     Route::get('catalogue/notactive/{id}', [CatalogueController::class, 'notactiveCatalogue'])->name('notactiveCatalogue');
      Route::resource('catalogue', CatalogueController::class);
      Route::resource('freehit', FreehitController::class);
      Route::resource('morenutrient', MorenutrientController::class);
@@ -36,6 +38,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/updatedregisterlist', [RegisteruserController::class, 'updatedregisterList'])->name('updatedregisterlist');
 
 });
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
 
 
 

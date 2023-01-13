@@ -16,8 +16,14 @@ class CatalogueController extends Controller
     public function index()
     {
         $catalogues = Catalogue::latest()->get();
+        $drycats = Catalogue::where('type', 'dry fertilizer')->get();
+        $liquidcats = Catalogue::where('type', 'liquid fertilizer')->get();
+        $mixcats = Catalogue::where('type', 'mix fertilizer')->get();
+        $active = Catalogue::where('active', 1)->get();
+        $notactive = Catalogue::where('active', 0)->get();
 
-        return view('admin.catalogue.index')->with('catalogues', $catalogues);;
+        return view('admin.catalogue.index')->with('catalogues', $catalogues)->with('drycats', $drycats)->with('liquidcats', $liquidcats)->with('mixcats', $mixcats)->with('notactive', $notactive)->with('active', $active);
+        ;
     }
 
     /**
@@ -133,8 +139,34 @@ class CatalogueController extends Controller
 
 
     public function allCatalogueApi(){
-        $catalogue = Catalogue::orderBy('name', 'asc')->get();
+        $catalogue = Catalogue::where('active', 1)->orderBy('name', 'asc')->get();
 
         return response(["status" => 200, "message" => "Success", 'catalogues' =>$catalogue]);
     }
+
+
+    public function activecatalogue($id){
+        $catalogue = Catalogue::find($id);
+        $catalogue->active = 1;
+        $catalogue->save();
+
+        return redirect()->route('catalogue.index')->with('success', 'Fertilizer Active Successfully');
+
+
+
+    }
+
+    public function notactivecatalogue($id){
+        $catalogue = Catalogue::find($id);
+        $catalogue->active = 0;
+        $catalogue->save();
+
+        return redirect()->route('catalogue.index')->with('success', 'Fertilizer not Active Successfully');
+
+
+
+    }
+
+
+  
 }
