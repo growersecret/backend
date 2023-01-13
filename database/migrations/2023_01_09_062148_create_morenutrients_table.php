@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('morenutrients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('percentage');
+        
             $table->timestamps();
         });
     }

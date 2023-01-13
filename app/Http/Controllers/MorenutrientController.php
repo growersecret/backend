@@ -38,12 +38,12 @@ class MorenutrientController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'percentage' => 'required'
+      
         ]);
 
         $data = [
             'name' => $request->name,
-            'percentage' => $request->percentage
+         
         ];
 
         Morenutrient::create($data);
@@ -83,12 +83,12 @@ class MorenutrientController extends Controller
     {
         $request->validate([
             'name' => 'required|max:255',
-            'percentage' => 'required'
+         
         ]);
 
         $data = [
             'name' => $request->name,
-            'percentage' => $request->percentage
+       
         ];
 
         $morenutrient->update($data);
@@ -105,5 +105,12 @@ class MorenutrientController extends Controller
     {
         $morenutrient->delete();
         return redirect()->route('morenutrient.index')->with('success', 'Nutrient Deleted Successfully');
+    }
+
+
+    public function otherNutrients(){
+        $otherNutrients = Morenutrient::orderBy('name', 'asc')->get();
+
+        return response(["status" => 200, "message" => "Success", 'otherNutrients' =>$otherNutrients]);
     }
 }

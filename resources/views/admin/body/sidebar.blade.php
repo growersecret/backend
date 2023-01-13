@@ -4,11 +4,11 @@
         <aside class="left-sidebar bg-sidebar" >
             <div id="sidebar" class="sidebar sidebar-with-footer">
               <!-- Aplication Brand -->
-              <div class="app-brand">
+              <a class="app-brand" href="{{route('dashboard')}}">
             
-                  <img src="{{asset('img/logo2.png')}}" alt="" srcset="" style="height: 75px; object-fit:contain">
+                  <img src="{{asset('img/logo2.png')}}" class="logo" alt="" srcset="" style="height: 75px; object-fit:contain">
                
-              </div>
+              </a>
               <!-- begin sidebar scrollbar -->
               <div class="sidebar-scrollbar">
 
@@ -32,17 +32,17 @@
                       <li  class="has-sub" >
                          <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pagedet"
                             aria-expanded="false" aria-controls="pagedet">
-                                 <span class="nav-text">Registered User</span> <b class="caret"></b>
+                                 <span class="nav-text">User List</span> <b class="caret"></b>
                              </a>
                        <ul  class="collapse"  id="pagedet">
                            <div class="sub-menu">
                             <li>
-                            <a href="{{route('registerlist')}}">Register user</a>
+                            <a href="{{route('registerlist')}}">Guest user</a>
                              </li>
                         
                             
                             <li>
-                              <a href="{{route('updatedregisterlist')}}">Updated Register user</a>
+                              <a href="{{route('updatedregisterlist')}}">Register user</a>
                              </li>
                         
 {{-- //end --}}
@@ -63,10 +63,10 @@
                               <div class="sub-menu">
 
                                 <li >
-                                  <a href="{{route('catalogue.index')}}">Index</a>
+                                  <a href="{{route('catalogue.index')}}">Fertilizer List</a>
                                 </li>
                                 <li >
-                                  <a href="{{route('catalogue.create')}}">Create</a>
+                                  <a href="{{route('catalogue.create')}}">Add Fertilizer</a>
                                 </li>
 {{-- //end --}}
 
@@ -84,7 +84,7 @@
                               <div class="sub-menu">
 
                                 <li >
-                                  <a href="{{route('freehit.index')}}">Index</a>
+                                  <a href="{{route('freehit.index')}}">Free Hit</a>
                                 </li>
                               
 {{-- //end --}}
@@ -105,10 +105,10 @@
                                  <div class="sub-menu">
    
                                    <li >
-                                     <a href="{{route('morenutrient.index')}}">Index</a>
+                                     <a href="{{route('morenutrient.index')}}">Nutrient List</a>
                                    </li>
                                    <li >
-                                     <a href="{{route('morenutrient.create')}}">Create</a>
+                                     <a href="{{route('morenutrient.create')}}">Nutrient Add</a>
                                    </li>
    {{-- //end --}}
    
@@ -194,3 +194,11 @@
 
             </div>
           </aside>
+
+
+
+
+
+
+
+          

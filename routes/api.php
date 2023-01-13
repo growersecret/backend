@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CatalogueController;
+use App\Http\Controllers\MorenutrientController;
 use App\Http\Controllers\RegisteruserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,10 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/register-user', [RegisteruserController::class, 'registerStore']);
-Route::post('/register-user/verify', [RegisteruserController::class, 'registerVerify']);
-Route::post('/resendotp', [RegisteruserController::class, 'resendOtp']);
+Route::post('/user/new', [RegisteruserController::class, 'registerStore']);
+Route::post('/user/verify', [RegisteruserController::class, 'registerVerify']);
+Route::post('/user/resendotp', [RegisteruserController::class, 'resendOtp']);
 Route::get('/userdetail/{email}', [RegisteruserController::class, 'userdetail']);
 Route::get('/reducehit/{email}', [RegisteruserController::class, 'reducehit']);
-Route::get('/catalogues', [CatalogueController::class, 'allCatalogueApi']);
-Route::patch('/updateRegisterUser/{email}', [RegisteruserController::class, 'updateRegisterUser']);
+Route::get('/allCatalogue', [CatalogueController::class, 'allCatalogueApi']);
+Route::get('/otherNutrients', [MorenutrientController::class, 'otherNutrients']);
+Route::patch('/updateUser/{email}', [RegisteruserController::class, 'updateRegisterUser']);

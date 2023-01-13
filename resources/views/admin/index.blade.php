@@ -3,6 +3,126 @@
 
 @section('admin')
 
+
+
+<div class="card-deck mb-4">
+    <a class="card col-3" href="{{route('registerlist')}}">
+  
+      <div class="card-body" >
+        <h4 class="card-title" style="color:#a70064" >Guest User</h5>
+          <p class="text-black mb-1">
+        Users who have not Updated Profile 
+          </p>
+          <p class="h6 text-black">
+            {{$registers->count()}}
+          </p>
+        
+        </div>
+      </a>
+    <a class="card col-3" href="{{route('updatedregisterlist')}}">
+  
+      <div class="card-body">
+        <h4 class="card-title" style="color:#a70064" >Register User</h5>
+          <p class="text-black mb-1">
+            Users who have Updated Profile 
+              </p>
+          <p class="h6 text-black">
+            {{$updatedregisters->count()}}
+          </p>
+        
+      </div>
+    </a>
+    <a class="card col-3" href="{{route('morenutrient.index')}}">
+  
+      <div class="card-body">
+        <h4 class="card-title" style="color:#a70064" >Other Nutrients</h5>
+          <p class="text-black mb-1">
+            Total No. of Other Nutrients
+              </p>
+          <p class="h6 text-black">
+            {{$morenutrients->count()}}
+          </p>
+        
+      </div>
+    </a>
+    <a class="card col-3" href="{{route('freehit.index')}}">
+  
+      <div class="card-body">
+        <h4 class="card-title" style="color:#a70064" >Total Free Hits</h5>
+          <p class="text-black mb-1">
+            Total No. of Free Count
+              </p>
+          <p class="h6 text-black">
+           {{$freehit->freecount}}
+          </p>
+        
+      </div>
+    </a>
+   
+    </div>
+   
+   
+
+
+<div class="card-deck mb-4">
+    <a class="card col-3" href="{{route('catalogue.index')}}">
+
+  
+      <div class="card-body">
+        <h4 class="card-title" style="color:#a70064" >Dry Fertilizers</h5>
+          <p class="text-black mb-1">
+            Total No. of Dry Fertilizers
+          </p>
+          <p class="h6 text-black">
+            {{$drycats->count()}}
+          </p>
+        
+      </div>
+    </a>
+    <a class="card col-3" href="{{route('catalogue.index')}}">
+  
+      <div class="card-body">
+        <h4 class="card-title" style="color:#a70064" >Liquid Fertilizers</h5>
+          <p class="text-black mb-1">
+            Total No. of Liquid Fertilizers
+          </p>
+          <p class="h6 text-black">
+            {{$liquidcats->count()}}
+          </p>
+        
+      </div>
+    </a>
+    <a class="card col-3" href="{{route('catalogue.index')}}">
+  
+      <div class="card-body">
+        <h4 class="card-title" style="color:#a70064" >Mix Fertilizers</h5>
+          <p class="text-black mb-1">
+            Total No. of Mix Fertilizers
+          </p>
+          <p class="h6 text-black">
+            {{$mixcats->count()}}
+          </p>
+        
+      </div>
+    </a>
+    <div class="card col-3">
+  
+      <div class="card-body">
+        <h4 class="card-title" style="color:#a70064" >Total Fertilizers</h5>
+          <p class="text-black mb-1">
+            Total No. of Fertilizers
+          </p>
+          <p class="h6 text-black">
+            {{$catalogues->count()}}
+          </p>
+        
+      </div>
+    </div>
+   
+    </div>
+   
+
+
 {{-- <div class="maincontainer">
      <div class="box">
          <h3 class="title">

@@ -5,7 +5,7 @@
   <div class="card col-3">
 
     <div class="card-body">
-      <h4 class="card-title" style="color:#a70064" >Total Fertilizers</h5>
+      <h4 class="card-title" style="color:#a70064" >Total Other Nutrients</h5>
         <p class="h6">
           {{$morenutrients->count()}}
         </p>
@@ -19,6 +19,9 @@
       <div class="card mb-4">
         <div class="card-header py-3">
          <div class="d-flex justify-content-between align-items-center" >
+          <p class="text-black mb-1">
+            Total No. of Other Nutrients
+              </p>
             <h5 class="" style="color:#a70064">More Nutrient List</h5>
           
            <div>
@@ -33,7 +36,7 @@
               <tr>
                 <th>Sr.No.</th>
                 <th>Nutrient Name</th>
-                <th>Percentage</th>
+             
              
                 <th>Action</th>
             
@@ -47,10 +50,7 @@
                    {{$item->name}}
                     </td>
 
-                    <td>
-                        {{$item->percentage}}%
-                    </td>
-
+                   
                  
 
                     
