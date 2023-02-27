@@ -48,9 +48,9 @@ class CatalogueController extends Controller
         $request->validate([
             'name' => 'required|max:45',
              'type'=> 'required',
-             'percent_N'=>'required|numeric|digits_between:0,100',
-             'percent_P'=>'required|numeric|digits_between:0,100',
-             'percent_K'=>'required|numeric|digits_between:0,100',
+             'percent_N'=>'required',
+             'percent_P'=>'required',
+             'percent_K'=>'required',
           
         ]);
        
@@ -101,9 +101,9 @@ class CatalogueController extends Controller
         $request->validate([
             'name' => 'required|max:45',
              'type'=> 'required',
-             'percent_N'=>'required|numeric|digits_between:0,100',
-             'percent_P'=>'required|numeric|digits_between:0,100',
-             'percent_K'=>'required|numeric|digits_between:0,100',
+             'percent_N'=>'required',
+             'percent_P'=>'required',
+             'percent_K'=>'required',
           
         ]);
        

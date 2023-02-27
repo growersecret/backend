@@ -56,7 +56,19 @@
 
                        <td>{{$item->email}}</td>
 
-                       <td>{{$item->hit_remaining}}/{{$item->free_hit}}</td>
+                       <td>@if($item->hit_remaining < 0)
+                       
+                       
+                       0/{{$item->free_hit}}
+                       
+                       @else
+                       
+                        {{$item->hit_remaining}}/{{$item->free_hit}}
+                        
+                        @endif
+                       
+                       
+                       </td>
 
                        <td>{{$item->created_at}}</td>
                         

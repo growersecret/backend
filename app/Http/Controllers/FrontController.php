@@ -19,6 +19,8 @@ class FrontController extends Controller
         $drycats = Catalogue::where('type', 'dry fertilizer')->get();
         $liquidcats = Catalogue::where('type', 'liquid fertilizer')->get();
         $mixcats = Catalogue::where('type', 'mix fertilizer')->get();
+        $active = Catalogue::where('active', 1)->get();
+        $notactive = Catalogue::where('active', 0)->get();
         return view('admin.index')
         ->with('catalogues', $catalogues)
         ->with('drycats', $drycats)
@@ -27,6 +29,8 @@ class FrontController extends Controller
         ->with('registers', $registers)
         ->with('updatedregisters', $updatedregisters)
         ->with('freehit', $freehit)
-        ->with('morenutrients', $morenutrients);;
+        ->with('morenutrients', $morenutrients)
+        ->with('notactive', $notactive)
+        ->with('active', $active);;
     }
 }

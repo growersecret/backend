@@ -29,9 +29,9 @@
         <div class="card-header py-3">
          <div class="d-flex justify-content-between align-items-center" >
             <h5 class="" style="color:#a70064">Total Updated List</h5>
-          
-           <div>
-
+            <div>
+            <a href="{{route('addUser')}}" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i>Add Users </a> 
+      
         </div>
        
         </div>
@@ -46,6 +46,7 @@
                 <th>Contact</th>
                 <th>Address</th>
                 <th>Created At</th>
+                <th>Action</th>
         
               </tr>
             </thead>
@@ -65,9 +66,43 @@
                        <td>{{$item->address}}</td>
                            
                        <td>{{$item->created_at}}</td>
+                          
+                    <td>
+                      <a href="{{route('editUser', $item->id)}}" class="btn btn-primary btn-icon-split btn-sm">
+                         <span class="icon text-white-50">
+                            <i class="fas fa-pen"></i>
+                         </span>
+                         <span class="text">Edit</span>
+                       </a>
+                   
+                     <button type="button" data-toggle="modal" data-target="#delted-modal-{{$item->id}}">
+
+                       <span class="text btn btn-danger btn-sm btn-icon-split">Delete</span>
+                 </button>
+                 <div class="modal fade" id="delted-modal-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="delted-modal-Label-{{$key + 1}}" aria-hidden="true">
+                   <div class="modal-dialog" role="document">
+                     <div class="modal-content">
+                       <div class="modal-header">
+                         <h5 class="modal-title" id="delted-modal-Label-{{$key + 1}}"> Are you Sure Want to Delete</h5>
+
+                       </div>
+                       {{-- <div class="modal-body">
+                           Are you Sure Want to Delete <br>
+                       </div> --}}
+                       <div class="modal-footer">
+                         <button type="button"  data-dismiss="modal"> <span class="btn btn-dark btn-sm"> Close</span></button>
+                         <form action="{{route('userDelete', $item->id)}}" method="post">
+                           @csrf
+                           @method('DELETE')
+                           <button type="submit">
+                            <span class="text btn btn-danger btn-icon-split btn-sm">Delete</span></button>
+                         </form>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+                    </td>
                     
-
-
                     </tr>
                     @endforeach
                    

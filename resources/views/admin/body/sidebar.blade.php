@@ -18,10 +18,9 @@
 
 
                     <li  class="has-sub active expand" >
-                      <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
-                        aria-expanded="false" aria-controls="dashboard">
+                      <a class="sidenav-item-link" href="{{route('dashboard')}}">
                         <i class="mdi mdi-view-dashboard-outline" style="color:#a70064"></i>
-                        <span class="nav-text">Admin Dashboard</span> <b class="caret"></b>
+                        <span class="nav-text">Admin Dashboard</span> 
                       </a>
                       <ul  class="collapse show"  id="dashboard"
                         data-parent="#sidebar-menu">
@@ -37,13 +36,22 @@
                        <ul  class="collapse"  id="pagedet">
                            <div class="sub-menu">
                             <li>
-                            <a href="{{route('registerlist')}}">Guest user</a>
+                            <a href="{{route('registerlist')}}">Registered users</a>
                              </li>
                         
                             
                             <li>
-                              <a href="{{route('updatedregisterlist')}}">Register user</a>
+                              <a href="{{route('updatedregisterlist')}}">Updated users</a>
                              </li>
+
+
+                             <li>
+                              <a href="{{route('addUser')}}">Add users</a>
+                             </li>
+
+
+
+                          
                         
 {{-- //end --}}
 

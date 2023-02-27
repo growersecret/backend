@@ -33,7 +33,7 @@ class OTPmail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'OTP mail from Grower Secret',
+            subject: 'Account Verification Code for Growers App',
         );
     }
 
