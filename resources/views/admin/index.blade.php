@@ -9,7 +9,7 @@
     <a class="card col-3" href="{{route('registerlist')}}">
   
       <div class="card-body" >
-        <h4 class="card-title" style="color:#a70064" >Guest User</h5>
+        <h4 class="card-title" style="color:#a70064" >Register User</h5>
           <p class="text-black mb-1">
         Users who have not Updated Profile 
           </p>
@@ -22,7 +22,7 @@
     <a class="card col-3" href="{{route('updatedregisterlist')}}">
   
       <div class="card-body">
-        <h4 class="card-title" style="color:#a70064" >Register User</h5>
+        <h4 class="card-title" style="color:#a70064" >Updated User</h5>
           <p class="text-black mb-1">
             Users who have Updated Profile 
               </p>
@@ -105,7 +105,7 @@
         
       </div>
     </a>
-    <div class="card col-3">
+    <a class="card col-3" href="{{route('catalogue.index')}}">
   
       <div class="card-body">
         <h4 class="card-title" style="color:#a70064" >Total Fertilizers</h5>
@@ -117,11 +117,57 @@
           </p>
         
       </div>
-    </div>
+    </a>
    
     </div>
    
 
+
+
+
+    
+
+<div class="card-deck mb-4">
+  <a class="card col-3" href="{{route('catalogue.index')}}">
+
+
+    <div class="card-body">
+      <h4 class="card-title" style="color:#a70064" >Inactive Fertilizers</h5>
+        <p class="text-black mb-1">
+          Total No. of Inactive Fertilizers
+        </p>
+        <p class="h6 text-black">
+          {{$notactive->count()}}
+        </p>
+      
+    </div>
+  </a>
+  <a class="card col-3" href="{{route('catalogue.index')}}">
+
+    <div class="card-body">
+      <h4 class="card-title" style="color:#a70064" >Active Fertilizers</h5>
+        <p class="text-black mb-1">
+          Total No. of Active Fertilizers
+        </p>
+        <p class="h6 text-black">
+          {{$active->count()}}
+        </p>
+      
+    </div>
+  </a>
+  <a class="col-3" href="{{route('catalogue.index')}}">
+
+    
+  </a>
+  <a class="col-3" href="{{route('catalogue.index')}}">
+
+  
+  </a>
+ 
+
+ 
+  </div>
+ 
 
 {{-- <div class="maincontainer">
      <div class="box">

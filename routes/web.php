@@ -36,13 +36,19 @@ Route::prefix('admin')->middleware('auth')->group(function () {
      Route::resource('morenutrient', MorenutrientController::class);
     Route::get('/registerlist', [RegisteruserController::class, 'registerList'])->name('registerlist');
     Route::get('/updatedregisterlist', [RegisteruserController::class, 'updatedregisterList'])->name('updatedregisterlist');
+    Route::get('add/user', [RegisteruserController::class, 'addUser'])->name('addUser');
+    Route::post('store/user', [RegisteruserController::class, 'userStore'])->name('userStore');
+
+    Route::get('edit/user/{id}', [RegisteruserController::class, 'editUser'])->name('editUser');
+    Route::patch('update/user/{id}', [RegisteruserController::class, 'userUpdate'])->name('userUpdate');
+    Route::delete('delete/user/{id}', [RegisteruserController::class, 'userDelete'])->name('userDelete');
 
 });
 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile', [ProfileController::class, 'userUpdate'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 

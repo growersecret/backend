@@ -5,7 +5,10 @@
   <div class="card col-3">
 
     <div class="card-body">
-      <h4 class="card-title" style="color:#a70064" >Total Other Nutrients</h5>
+      <h4 class="card-title" style="color:#a70064" >Other Nutrients</h5>
+        <p class="text-black mb-1">
+          Total No. of Other Nutrients
+            </p>
         <p class="h6">
           {{$morenutrients->count()}}
         </p>
@@ -19,9 +22,7 @@
       <div class="card mb-4">
         <div class="card-header py-3">
          <div class="d-flex justify-content-between align-items-center" >
-          <p class="text-black mb-1">
-            Total No. of Other Nutrients
-              </p>
+        
             <h5 class="" style="color:#a70064">More Nutrient List</h5>
           
            <div>
@@ -36,7 +37,7 @@
               <tr>
                 <th>Sr.No.</th>
                 <th>Nutrient Name</th>
-             
+                <th>Created At</th>
              
                 <th>Action</th>
             
@@ -49,6 +50,9 @@
                     <td>
                    {{$item->name}}
                     </td>
+                    <td>
+                      {{$item->created_at}}
+                       </td>
 
                    
                  
@@ -62,11 +66,11 @@
                          <span class="text">Edit</span>
                        </a>
                    
-                     <button type="button" data-toggle="modal" data-target="#delted-modal">
+                     <button type="button" data-toggle="modal" data-target="#delted-modal-{{$item->id}}">
 
                        <span class="text btn btn-danger btn-sm btn-icon-split">Delete</span>
                  </button>
-                 <div class="modal fade" id="delted-modal" tabindex="-1" role="dialog" aria-labelledby="delted-modal-Label-{{$key + 1}}" aria-hidden="true">
+                 <div class="modal fade" id="delted-modal-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="delted-modal-Label-{{$key + 1}}" aria-hidden="true">
                    <div class="modal-dialog" role="document">
                      <div class="modal-content">
                        <div class="modal-header">

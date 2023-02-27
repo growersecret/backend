@@ -28,17 +28,29 @@ class ProfileController extends Controller
      * @param  \App\Http\Requests\ProfileUpdateRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(ProfileUpdateRequest $request)
-    {
-        $request->user()->fill($request->validated());
+    public function userUpdate(Request $request)
+    {      $request->validate([
+        'name' => 'required|max:45',
+        'address' => 'required|max:255',
+        'mobile' => 'required|max:36',
+        'email' => 'required|email',
+    ]);
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
+        $user = Auth::user();
 
-        $request->user()->save();
+        $data = [
+            'name' => $request->name,
+            'address' => $request->address,
+            'mobile' => $request->mobile,
+           
+            'email' => $request->email,
+            
+        ];
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        $user->update($data);
+        return redirect()->route('profile.edit')->with('success', 'Admin Profile Updated Successfully');
+
+      
     }
 
     /**

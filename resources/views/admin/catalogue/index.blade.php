@@ -63,10 +63,10 @@
   <div class="card col-3">
 
     <div class="card-body">
-      <h4 class="card-title" style="color:#a70064" >Not active Fertilizers</h5>
+      <h4 class="card-title" style="color:#a70064" >Inactive Fertilizers</h5>
        
         <p class="text-black mb-1">
-          Total No. of not active fertilizers
+          Total No. of Inactive fertilizers
         </p>
         <p class="h6">
           {{$notactive->count()}}
@@ -149,7 +149,7 @@
 
                     <td>
                     @if ($item->active === 0)
-                      Not Actvie
+                      Inactvie
                     @else
                       Active
                     @endif
@@ -166,7 +166,7 @@
                     <span class="icon text-white-50">
                        <i class="fas fa-pen"></i>
                     </span>
-                    <span class="text"> Not Actvie</span>
+                    <span class="text"> Inactvie</span>
                   </a>
                   @endif
                       </td>
@@ -180,11 +180,11 @@
                          <span class="text">Edit</span>
                        </a>
                    
-                     <button type="button" data-toggle="modal" data-target="#delted-modal">
+                     <button type="button" data-toggle="modal" data-target="#delted-modal-{{$item->id}}">
 
                        <span class="text btn btn-danger btn-sm btn-icon-split">Delete</span>
                  </button>
-                 <div class="modal fade" id="delted-modal" tabindex="-1" role="dialog" aria-labelledby="delted-modal-Label-{{$key + 1}}" aria-hidden="true">
+                 <div class="modal fade" id="delted-modal-{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="delted-modal-Label-{{$key + 1}}" aria-hidden="true">
                    <div class="modal-dialog" role="document">
                      <div class="modal-content">
                        <div class="modal-header">
